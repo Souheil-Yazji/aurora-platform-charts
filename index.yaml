@@ -1,0 +1,122 @@
+apiVersion: v1
+entries:
+  argocd-instance:
+  - apiVersion: v2
+    appVersion: v3.1.9
+    created: "2026-07-09T17:00:46.5006294Z"
+    description: A Helm chart that configures Argo CD.
+    digest: 103b05dab12099360d8af08c616dcd6f95f29ca5ecbf6cc385b8a02930ce257b
+    name: argocd-instance
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/argocd-instance-0.17.0/argocd-instance-0.17.0.tgz
+    version: 0.17.0
+  argocd-operator:
+  - apiVersion: v2
+    appVersion: 0.14.0
+    created: "2026-07-09T17:00:46.744948144Z"
+    description: A Helm chart that deploys ArgoCD Operator.
+    digest: feea9339f186707656fa0e9ba67373e67c0e828c172d89d1c4d1e2edc6383966
+    name: argocd-operator
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/argocd-operator-0.0.13/argocd-operator-0.0.13.tgz
+    version: 0.0.13
+  aurora-namespace:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2026-07-09T17:00:46.972758413Z"
+    dependencies:
+    - name: raw
+      repository: file://../raw
+      version: 0.0.1
+    description: Aurora Namespace
+    digest: 0516e95fe6a1e073f880461b1524375e90b0d5902f1e31b04ded1e9031d18000
+    name: aurora-namespace
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/aurora-namespace-0.0.22/aurora-namespace-0.0.22.tgz
+    version: 0.0.22
+  aurora-platform:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2026-07-09T17:00:47.24160919Z"
+    dependencies:
+    - alias: core
+      condition: core.enabled
+      name: aurora-core
+      repository: ""
+      version: 0.0.1
+    - alias: app
+      condition: app.enabled
+      import-values:
+      - child: data
+        parent: global.imports
+      name: aurora-app
+      repository: ""
+      version: 0.0.1
+    - alias: mgmt
+      condition: mgmt.enabled
+      import-values:
+      - child: data
+        parent: global.imports
+      name: aurora-mgmt
+      repository: ""
+      version: 0.0.1
+    description: Aurora Platform
+    digest: 487a9240ba738335879df21c56e9fe89aa4e8198885ccd4c4942ab21970f992f
+    name: aurora-platform
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/aurora-platform-0.0.267/aurora-platform-0.0.267.tgz
+    version: 0.0.267
+  aurora-solution:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2026-07-09T17:00:47.52723949Z"
+    description: Aurora Solution
+    digest: c57ef286ae857aa933a7c1625e947cce35397ab943ab7622107636ae7bcb2c12
+    name: aurora-solution
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/aurora-solution-0.0.32/aurora-solution-0.0.32.tgz
+    version: 0.0.32
+  istio-custom-responses:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-07-09T17:00:47.768430282Z"
+    description: A Helm chart that configures custom response templates for Istio.
+    digest: e209dddb037e5713529de480a51aa4c6754be4bedd06b24f9a487b836c18ae6d
+    name: istio-custom-responses
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/istio-custom-responses-0.0.1/istio-custom-responses-0.0.1.tgz
+    version: 0.0.1
+  istio-ingress-gateway:
+  - apiVersion: v2
+    created: "2026-07-09T17:00:47.99744777Z"
+    dependencies:
+    - condition: gateway.enabled
+      name: gateway
+      repository: https://istio-release.storage.googleapis.com/charts
+      version: 1.29.1
+    description: This chart deploys an opinionated Istio Ingress Gateway.
+    digest: 089d8846b0397d1dc58b01897b2fe7784068dd08c9533eb5a2e206b41d5a2319
+    name: istio-ingress-gateway
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/istio-ingress-gateway-0.0.9/istio-ingress-gateway-0.0.9.tgz
+    version: 0.0.9
+  raw:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2026-07-09T17:00:48.223629383Z"
+    description: A place for all the Kubernetes resources which don't already have
+      a home.
+    digest: 8d8243e6fa3896e181273d3deb9a48d487073184770c171397cc487c8a3e7b6c
+    name: raw
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/raw-0.0.1/raw-0.0.1.tgz
+    version: 0.0.1
+generated: "2026-07-09T17:00:48.22364376Z"
