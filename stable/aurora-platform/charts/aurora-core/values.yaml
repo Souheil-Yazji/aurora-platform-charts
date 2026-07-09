@@ -1197,7 +1197,7 @@ components:
     image:
       # registry: docker.io
       repository: aquasec/kube-bench
-      tag: "v0.15.5"
+      tag: "v0.15.6"
       pullPolicy: Always
 
     resources:
