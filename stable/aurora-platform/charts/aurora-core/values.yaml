@@ -2233,7 +2233,7 @@ components:
     image:
       # registry: docker.io
       repository: aquasec/trivy-operator
-      tag: "0.29.0"
+      tag: "0.32.0"
       pullPolicy: IfNotPresent
 
     podSecurityContext:
