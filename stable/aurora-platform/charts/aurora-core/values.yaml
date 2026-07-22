@@ -1157,7 +1157,7 @@ components:
         image:
           # registry: docker.io
           repository: falcosecurity/falco-driver-loader
-          tag: "0.41.3"
+          tag: "0.44.1"
           # pullPolicy: IfNotPresent
 
       falcoctl:
