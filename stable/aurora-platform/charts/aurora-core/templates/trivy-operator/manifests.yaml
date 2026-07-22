@@ -1,9 +1,9 @@
-{{ if and .Values.components.grafana.enabled (eq .Values.global.provider "azure") -}}
+{{ if and .Values.components.trivy.enabled .Values.components.trivy.registryCredentials.enabled -}}
 
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: "{{ .Values.global.cluster }}-grafana-ad-secret"
+  name: "{{ .Values.global.cluster }}-trivy-manifests"
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
@@ -15,29 +15,28 @@ spec:
     plugin:
       env:
         - name: HELM_RELEASE_NAME
-          value: "grafana-ad-secret"
+          value: "trivy-manifests"
         - name: HELM_VALUES
           value: |
             resources:
               - apiVersion: v1
                 kind: Secret
                 metadata:
-                  name: auth-azuread-oauth-secret
-                  namespace: grafana-system
+                  name: trivy-image-pull-secret
+                  namespace: trivy-system
                   labels:
-                    app.kubernetes.io/name: "grafana-ad-secret"
+                    app.kubernetes.io/name: "trivy-manifests"
                     app.kubernetes.io/instance: "{{ .Values.global.cluster }}"
-                    app.kubernetes.io/component: auth
-                    app.kubernetes.io/part-of: grafana-system
+                    app.kubernetes.io/component: config
+                    app.kubernetes.io/part-of: trivy-system
                     app.kubernetes.io/managed-by: argo
-                stringData:
-                  client_id: {{ required "grafana.azure.clientId is required" .Values.components.grafana.azure.clientId | quote }}
-                  client_secret: {{ required "grafana.azure.clientPassword is required" .Values.components.grafana.azure.clientPassword | quote }}
-                type: Opaque
-
+                    helm.sh/chart: {{ printf "%s-%s" .Chart.Name .Chart.Version }}
+                type: kubernetes.io/dockerconfigjson
+                data:
+                  .dockerconfigjson: {{ required "trivy.secretDockerConfigJson is required" .Values.components.trivy.secretDockerConfigJson | b64enc }}
   destination:
     name: {{ .Values.global.cluster }}
-    namespace: grafana-system
+    namespace: trivy-system
   syncPolicy:
     automated:
       prune: true
