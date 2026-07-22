@@ -1178,7 +1178,7 @@ components:
         image:
           # registry: docker.io
           repository: falcosecurity/k8s-metacollector
-          tag: "0.1.1"
+          tag: "0.1.3"
           # pullPolicy: IfNotPresent
 
     mounts:
