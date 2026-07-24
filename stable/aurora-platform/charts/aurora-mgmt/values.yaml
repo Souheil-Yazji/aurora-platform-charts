@@ -126,7 +126,7 @@ components:
       # disableAdmin: true
       # ingressDomain: ""
 
-        targetRevision: 0.17.0
+        targetRevision: 0.18.0
       nodeSelector:
         kubernetes.io/os: linux
         node.ssc-spc.gc.ca/purpose: system
@@ -225,7 +225,7 @@ components:
       # disableAdmin: true
       # ingressDomain: ""
 
-        targetRevision: 0.17.0
+        targetRevision: 0.18.0
       nodeSelector:
         kubernetes.io/os: linux
         node.ssc-spc.gc.ca/purpose: system
