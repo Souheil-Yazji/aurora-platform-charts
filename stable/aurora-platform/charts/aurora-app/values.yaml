@@ -139,7 +139,7 @@ components:
       helm:
         # chart: argo-workflows
         # repository: https://argoproj.github.io/argo-helm
-        targetRevision: 0.42.1
+        targetRevision: 0.47.5
 
       images:
         pullPolicy: IfNotPresent
@@ -289,13 +289,13 @@ components:
       helm:
         # chart: base
         # repository: https://istio-release.storage.googleapis.com/charts
-        targetRevision: 1.29.1
+        targetRevision: 1.30.3
 
     cni:
       helm:
         # chart: cni
         # repository: https://istio-release.storage.googleapis.com/charts
-        targetRevision: 1.29.1
+        targetRevision: 1.30.3
 
       image:
         # registry: docker.io
@@ -409,7 +409,7 @@ components:
       helm:
         # chart: istiod
         # repository: https://istio-release.storage.googleapis.com/charts
-        targetRevision: 1.29.1
+        targetRevision: 1.30.3
 
       image:
         # registry: docker.io
@@ -485,7 +485,7 @@ components:
       helm:
         # chart: ztunnel
         # repository: https://istio-release.storage.googleapis.com/charts
-        targetRevision: 1.29.1
+        targetRevision: 1.30.3
 
       image:
         # registry: docker.io
@@ -530,7 +530,7 @@ components:
     helm:
       # chart: kiali-operator
       # repository: https://kiali.org/helm-charts
-      targetRevision: 1.62.0
+      targetRevision: 1.89.7
 
     imagePullSecrets: []
     image:
@@ -644,7 +644,7 @@ components:
     helm:
       # chart: solr-operator
       # repository: https://solr.apache.org/charts
-      targetRevision: 0.5.1
+      targetRevision: 0.9.1
 
     imagePullSecrets: []
     image:
@@ -725,7 +725,7 @@ components:
     helm:
       # chart: strimzi-kafka-operator
       # repository: oci://quay.io/strimzi-helm/strimzi-kafka-operator
-      targetRevision: 0.45.2
+      targetRevision: 0.51.0
 
     imagePullSecrets: []
     image:
