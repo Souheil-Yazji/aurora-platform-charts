@@ -1225,7 +1225,7 @@ components:
         image:
           # registry: docker.io
           repository: falcosecurity/falcosidekick
-          tag: "2.31.1"
+          tag: "2.34.1"
           # pullPolicy: IfNotPresent
 
       k8sMetacollector:
