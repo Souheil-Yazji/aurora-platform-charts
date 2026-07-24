@@ -73,10 +73,10 @@ components:
   ### Argo Operator ###
   #####################
   argoOperator:
-    helm:
+    helm: {}
       # chart: argocd-operator
       # repository: https://gccloudone-aurora.github.io/aurora-platform-charts
-      targetRevision: 0.0.13
+      # targetRevision: 0.4.1
     containerSecurityContext:
       allowPrivilegeEscalation: false
       capabilities:
@@ -118,7 +118,7 @@ components:
         sourceRepos: []
 
     argocdInstance:
-      helm:
+      helm: {}
       # chart: argocd-instance
       # repository: https://gccloudone-aurora.github.io/aurora-platform-charts
       # targetRevision: 0.13.0
@@ -126,7 +126,6 @@ components:
       # disableAdmin: true
       # ingressDomain: ""
 
-        targetRevision: 0.17.0
       nodeSelector:
         kubernetes.io/os: linux
         node.ssc-spc.gc.ca/purpose: system
@@ -217,7 +216,7 @@ components:
   #######################
   argoFoundation:
     argocdInstance:
-      helm:
+      helm: {}
       # chart: argocd-instance
       # repository: https://gccloudone-aurora.github.io/aurora-platform-charts
       # targetRevision: 0.13.0
@@ -225,7 +224,6 @@ components:
       # disableAdmin: true
       # ingressDomain: ""
 
-        targetRevision: 0.17.0
       nodeSelector:
         kubernetes.io/os: linux
         node.ssc-spc.gc.ca/purpose: system
@@ -349,10 +347,10 @@ components:
   billOfLanding:
     enabled: false
 
-    helm:
+    helm: {}
       # chart: bol
-      # repository: https://gccloudone-aurora.github.io/bol
-      targetRevision: 0.0.1
+      # repository: https://gccloudone-aurora.github.io/aurora-platform-charts
+      # targetRevision: 0.0.1
 
     image:
       # registry: docker.io
@@ -396,10 +394,10 @@ components:
   loki:
     enabled: false
 
-    helm:
+    helm: {}
       # chart: loki
-      # repository: https://grafana.github.io/helm-charts
-      targetRevision: 6.55.0
+      # repository: https://grafana-community.github.io
+      # targetRevision: 6.21.0
 
     image:
       # registry: docker.io
