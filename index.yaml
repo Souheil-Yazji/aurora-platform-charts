@@ -3,6 +3,16 @@ entries:
   argocd-instance:
   - apiVersion: v2
     appVersion: v3.1.9
+    created: "2026-07-24T19:11:20.867909929Z"
+    description: A Helm chart that configures Argo CD.
+    digest: 3f7a6dba15b1e0559e976ebda9a008d166a66a1ad49e53fa0b8bf5224b4bdfa2
+    name: argocd-instance
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/argocd-instance-0.18.0/argocd-instance-0.18.0.tgz
+    version: 0.18.0
+  - apiVersion: v2
+    appVersion: v3.1.9
     created: "2026-07-09T17:00:46.5006294Z"
     description: A Helm chart that configures Argo CD.
     digest: 103b05dab12099360d8af08c616dcd6f95f29ca5ecbf6cc385b8a02930ce257b
@@ -38,6 +48,38 @@ entries:
     - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/aurora-namespace-0.0.22/aurora-namespace-0.0.22.tgz
     version: 0.0.22
   aurora-platform:
+  - apiVersion: v2
+    appVersion: 2.0.0
+    created: "2026-07-24T19:11:21.048202896Z"
+    dependencies:
+    - alias: core
+      condition: core.enabled
+      name: aurora-core
+      repository: ""
+      version: 0.0.1
+    - alias: app
+      condition: app.enabled
+      import-values:
+      - child: data
+        parent: global.imports
+      name: aurora-app
+      repository: ""
+      version: 0.0.1
+    - alias: mgmt
+      condition: mgmt.enabled
+      import-values:
+      - child: data
+        parent: global.imports
+      name: aurora-mgmt
+      repository: ""
+      version: 0.0.1
+    description: Aurora Platform
+    digest: 4277a1b81765779e9ab5ff351116c76a4063b740ebb85b39c8f6840391b00711
+    name: aurora-platform
+    type: application
+    urls:
+    - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/aurora-platform-0.0.285/aurora-platform-0.0.285.tgz
+    version: 0.0.285
   - apiVersion: v2
     appVersion: 2.0.0
     created: "2026-07-22T16:05:07.465285196Z"
@@ -215,4 +257,4 @@ entries:
     urls:
     - https://github.com/Souheil-Yazji/aurora-platform-charts/releases/download/raw-0.0.1/raw-0.0.1.tgz
     version: 0.0.1
-generated: "2026-07-22T16:05:07.465327706Z"
+generated: "2026-07-24T19:11:21.048228023Z"
