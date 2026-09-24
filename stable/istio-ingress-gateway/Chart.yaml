@@ -19,6 +19,6 @@ version: 0.0.9
 
 dependencies:
   - name: gateway
-    version: 1.29.1
+    version: 1.30.3
     repository: https://istio-release.storage.googleapis.com/charts
     condition: gateway.enabled
